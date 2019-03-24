@@ -32,3 +32,11 @@
 /m-discovery/.mvn/
 /m-repository/.mvn/
 /wishing-well/.mvn/
+/iam/mvnw.cmd
+/iam/mvnw
+/m-discovery/mvnw
+/m-discovery/mvnw.cmd
+/m-repository/mvnw
+/m-repository/mvnw.cmd
+/wishing-well/mvnw
+/wishing-well/mvnw.cmd
