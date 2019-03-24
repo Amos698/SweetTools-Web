@@ -15,7 +15,7 @@ public class Food extends Base {
     private String foodName;
 
     @Column(nullable = false)
-    private String desc;
+    private String foodDesc;
 
     @Column
     private String foodImg;

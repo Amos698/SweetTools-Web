@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 @Entity
 @Data
 @NoArgsConstructor
-public class WishingWell extends Base {
+public class Wish extends Base {
 
     @Column(nullable = false)
     private String giftName;
@@ -18,6 +18,6 @@ public class WishingWell extends Base {
     private String giftImg;
 
     @Column(nullable = false)
-    private String desc;
+    private String giftDesc;
 
 }

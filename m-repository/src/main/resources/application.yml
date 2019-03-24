@@ -2,10 +2,10 @@ spring:
   application:
     name: m-repository
   datasource:
-    url: jdbc:mysql://localhost:3306/sweettools
+    url: jdbc:mysql://localhost:3306/sweettools?serverTimezone=UTC
     username: root
     password: Amos698_
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     properties:
       hibernate:
@@ -19,8 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1000/eureka/
-
-spring.datasource.username=root
-spring.datasource.password=root
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop
