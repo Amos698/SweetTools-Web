@@ -1,6 +1,16 @@
 spring:
   application:
     name: wishing-well
+  datasource:
+    url: jdbc:mysql://localhost:3306/sweettools?serverTimezone=UTC
+    username: root
+    password: Amos698_
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
 
 server:
   port: 1010
