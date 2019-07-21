@@ -1,6 +1,16 @@
 spring:
   application:
     name: iam
+  datasource:
+    url: jdbc:mysql://193.112.6.185:3306/iam?serverTimezone=UTC
+    username: root
+    password: Amos698_
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
 
 server:
   port: 1002

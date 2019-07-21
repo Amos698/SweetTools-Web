@@ -18,7 +18,6 @@
     <description>a gift to my girlfriend</description>
 
     <modules>
-        <module>m-repository</module>
         <module>m-discovery</module>
         <module>wishing-well</module>
         <module>iam</module>
