@@ -1,4 +1,4 @@
-package win.amos.sweettools.iam.repo.model;
+package win.amos698.sweettools.wishingwell.repo.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -28,4 +26,7 @@ class Base {
 
     @Column
     private String remark;
+
+    @Column(nullable = false)
+    private Integer used = 1;
 }
