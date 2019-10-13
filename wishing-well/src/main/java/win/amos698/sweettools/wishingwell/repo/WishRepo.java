@@ -8,10 +8,10 @@ import win.amos698.sweettools.wishingwell.repo.model.Wish;
 
 public interface WishRepo extends JpaRepository<Wish, Long> {
 
-    @Query(value = "SELECT * FROM (SELECT * FROM wish WHERE userId=:userId) ORDER BY RAND() LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT * FROM (SELECT * FROM wish WHERE user_id=:userId) as n ORDER BY RAND() LIMIT 1", nativeQuery = true)
     Wish pickOne(@Param("userId") long userId);
 
     @Modifying
-    @Query(value = "UPDATE WISH SET used=0 WHERE wishId=:wishId", nativeQuery = true)
+    @Query(value = "UPDATE WISH SET used=0 WHERE id=:wishId", nativeQuery = true)
     void deleteWish(@Param("wishId") long wishId);
 }
