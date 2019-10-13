@@ -19,4 +19,9 @@ public class Lover extends Base {
     @Column(nullable = false)
     private long gid;
 
+    public Lover(long bid, long gid) {
+        this.bid = bid;
+        this.gid = gid;
+    }
+
 }
