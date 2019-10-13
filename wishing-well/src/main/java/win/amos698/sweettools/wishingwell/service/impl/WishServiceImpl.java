@@ -17,13 +17,13 @@ public class WishServiceImpl implements WishService {
     }
 
     @Override
-    public Wish createWish(int userId, String wishName, String wishDesc, String wishImg) {
+    public Wish createWish(long userId, String wishName, String wishDesc, String wishImg) {
         Wish wish = new Wish(userId, wishName, wishDesc, wishImg);
         return wishRepo.save(wish);
     }
 
     @Override
-    public Wish readWish(int wishId) {
+    public Wish readWish(long wishId) {
         return wishRepo.getOne(wishId);
     }
 
@@ -33,12 +33,12 @@ public class WishServiceImpl implements WishService {
     }
 
     @Override
-    public void deleteWish(int wishId) {
+    public void deleteWish(long wishId) {
         wishRepo.deleteWish(wishId);
     }
 
     @Override
-    public Wish pickWish(int userId) {
+    public Wish pickWish(long userId) {
         return wishRepo.pickOne(userId);
     }
 }

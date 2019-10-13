@@ -6,15 +6,15 @@ import win.amos698.sweettools.wishingwell.repo.model.Wish;
 public interface WishService {
 
     @Transactional
-    Wish createWish(int userId, String wishName, String wishDesc, String wishImg);
+    Wish createWish(long userId, String wishName, String wishDesc, String wishImg);
 
-    Wish readWish(int wishId);
+    Wish readWish(long wishId);
 
     @Transactional
     Wish updateWish(Wish wish);
 
     @Transactional
-    void deleteWish(int wishId);
+    void deleteWish(long wishId);
 
-    Wish pickWish(int userId);
+    Wish pickWish(long userId);
 }

@@ -23,9 +23,9 @@ public class Wish extends Base {
     private String wishImg;
 
     @Column(nullable = false)
-    private Integer userId;
+    private long userId;
 
-    public Wish(Integer userId, String wishName, String wishDesc, String wishImg) {
+    public Wish(long userId, String wishName, String wishDesc, String wishImg) {
         this.wishName = wishName;
         this.wishDesc = wishDesc;
         this.wishImg = wishImg;

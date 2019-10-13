@@ -18,7 +18,7 @@ public class WishApi {
     }
 
     @PostMapping("/wish")
-    public Result<Wish> createWish(@RequestParam int userId,
+    public Result<Wish> createWish(@RequestParam long userId,
                                    @RequestParam String wishName,
                                    @RequestParam String wishDesc,
                                    @RequestParam String wishImg) {
@@ -31,7 +31,7 @@ public class WishApi {
     }
 
     @GetMapping("/wish/{wishId}")
-    public Result<Wish> readWish(@PathVariable int wishId) {
+    public Result<Wish> readWish(@PathVariable long wishId) {
         Wish wish = wishService.readWish(wishId);
         if (wish == null) {
             return new Result<>("401", "参数错误", null);
@@ -41,7 +41,7 @@ public class WishApi {
     }
 
     @PutMapping("/wish/{wishId}")
-    public Result<Wish> updateWish(@PathVariable int wishId,
+    public Result<Wish> updateWish(@PathVariable long wishId,
                                    @RequestParam(required = false) String wishName,
                                    @RequestParam(required = false) String wishDesc,
                                    @RequestParam(required = false) String wishImg) {
@@ -68,12 +68,12 @@ public class WishApi {
     }
 
     @DeleteMapping("/wish/{wishId}")
-    public void deleteWish(@PathVariable int wishId) {
+    public void deleteWish(@PathVariable long wishId) {
         wishService.deleteWish(wishId);
     }
 
     @GetMapping("/pick-wish/{userId}")
-    public Result<Wish> pickWish(@PathVariable int userId) {
+    public Result<Wish> pickWish(@PathVariable long userId) {
         Wish wish = wishService.pickWish(userId);
         if (wish == null) {
             return new Result<>("401", "参数错误", null);
