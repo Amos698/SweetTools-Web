@@ -12,6 +12,6 @@ public interface WishRepo extends JpaRepository<Wish, Long> {
     Wish pickOne(@Param("userId") long userId);
 
     @Modifying
-    @Query(value = "UPDATE WISH SET used=0 WHERE id=:wishId AND used=1", nativeQuery = true)
+    @Query(value = "UPDATE wish SET used=0 WHERE id=:wishId AND used=1", nativeQuery = true)
     void deleteWish(@Param("wishId") long wishId);
 }

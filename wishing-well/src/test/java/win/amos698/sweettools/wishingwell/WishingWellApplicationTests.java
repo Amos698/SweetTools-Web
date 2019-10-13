@@ -8,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import win.amos698.sweettools.wishingwell.api.WishApi;
+import win.amos698.sweettools.wishingwell.repo.model.Lover;
 import win.amos698.sweettools.wishingwell.repo.model.Wish;
+import win.amos698.sweettools.wishingwell.service.LoverService;
 import win.amos698.sweettools.wishingwell.service.WishService;
 
 @RunWith(SpringRunner.class)
@@ -17,6 +19,9 @@ public class WishingWellApplicationTests {
 
     @Autowired
     private WishService wishService;
+
+    @Autowired
+    private LoverService loverService;
 
     @Test
     public void contextLoads() {
@@ -51,6 +56,19 @@ public class WishingWellApplicationTests {
 
         Wish wish = wishService.pickWish(1);
         System.out.println(wish);
+    }
+
+    @Test
+    public void testLoverService() {
+        Lover lover = loverService.createLover(1, 2);
+        System.out.println(lover);
+
+        System.out.println(loverService.readLover(1));
+
+        lover = loverService.updateLover(1, 3);
+        System.out.println(lover);
+
+        System.out.println(loverService.deleteLover(1));
     }
 
 }

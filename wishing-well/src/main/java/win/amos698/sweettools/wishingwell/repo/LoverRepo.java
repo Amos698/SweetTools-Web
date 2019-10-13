@@ -12,6 +12,6 @@ public interface LoverRepo extends JpaRepository<Lover, Long> {
     Lover getLover(@Param("uid") long uid);
 
     @Modifying
-    @Query(value = "UPDATE WISH SET used=0 WHERE bid=:uid AND used=1", nativeQuery = true)
+    @Query(value = "UPDATE lover SET used=0 WHERE bid=:uid AND used=1", nativeQuery = true)
     int deleteWish(@Param("uid") long uid);
 }
