@@ -72,8 +72,13 @@ public class WishApi {
         wishService.deleteWish(wishId);
     }
 
-    public Result<Wish> pickWish() {
-        //TODO 随机获取愿望
-        return null;
+    @GetMapping("/pick-wish/{userId}")
+    public Result<Wish> pickWish(@PathVariable int userId) {
+        Wish wish = wishService.pickWish(userId);
+        if (wish == null) {
+            return new Result<>("401", "参数错误", null);
+        } else {
+            return new Result<>("200", "获取成功", wish);
+        }
     }
 }
